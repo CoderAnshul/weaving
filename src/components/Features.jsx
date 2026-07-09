@@ -140,10 +140,10 @@ function ShimmerCone({ prefersReducedMotion, variant = 'default' }) {
 
       <ellipse cx="180" cy="300" rx="46" ry="27" fill="#F3EAD9" stroke="#241C15" strokeOpacity="0.15" />
       <text x="180" y="296" textAnchor="middle" fontFamily="'Cormorant Garamond', serif" fontStyle="italic" fontWeight="600" fontSize="21" fill="#A63446">
-        Aumni
+        SSP
       </text>
       <text x="180" y="313" textAnchor="middle" fontFamily="'Work Sans', sans-serif" fontSize="8" letterSpacing="2" fill="#241C15" opacity="0.6">
-        CRAFTS
+        JARI
       </text>
     </svg>
   )

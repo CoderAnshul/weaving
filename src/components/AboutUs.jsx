@@ -68,7 +68,7 @@ export default function AboutUs() {
             variants={fadeUp}
             className="font-body text-xs sm:text-sm font-semibold tracking-[0.2em] text-[#A63446] uppercase mb-6"
           >
-            About Aumni Crafts
+            About SSP Jari
           </motion.p>
 
           {/* Bobbin + unspooling thread divider */}
@@ -115,7 +115,7 @@ export default function AboutUs() {
             variants={fadeUp}
             className="drop-cap font-body text-base sm:text-lg text-[#241C15]/80 leading-relaxed text-left sm:text-center"
           >
-            t <span className="font-display italic font-semibold text-[#241C15]">Aumni Crafts</span>, every
+            -<span className="font-display italic font-semibold text-[#241C15]">SSP Jari</span>, every
             spool starts as raw fibre in an artisan's hands before it becomes thread, zari, or trim in yours.
             We work directly with weaver families across Gujarat to dye, twist, and finish each batch the way
             it's been done for generations, then hold it to a standard modern ateliers expect. No shortcuts,

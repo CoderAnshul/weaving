@@ -120,7 +120,7 @@ export default function Footer() {
                 <div className="text-slate-600 text-[13px] leading-relaxed">
                   <span className="font-bold text-slate-800">Contact Us:</span>
                   <p className="mt-1 text-slate-600 hover:text-slate-900 transition-colors">
-                    Aumni Source Retail Solutions Pvt Ltd<br />
+                    SSP Jari Pvt Ltd<br />
                     45 A, Bharathi Colony, 2nd Street W,<br />
                     Peelamedu, Coimbatore, Tamilnadu,<br />
                     India - 641004
@@ -149,7 +149,7 @@ export default function Footer() {
                   <Mail className="w-4 h-4" />
                 </div>
                 <div className="text-slate-600 text-[13px] leading-relaxed mt-1">
-                  <a href="mailto:support@aumnicrafts.com" className="underline hover:text-[#8a2b53] transition-colors font-semibold text-slate-750">support@aumnicrafts.com</a>
+                  <a href="mailto:support@sspjari.com" className="underline hover:text-[#8a2b53] transition-colors font-semibold text-slate-750">support@sspjari.com</a>
                 </div>
               </div>
             </div>
@@ -242,7 +242,7 @@ export default function Footer() {
         <div className="bg-[#111111] text-slate-400 py-6 border-t border-zinc-800/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
             <p className="text-[13px]">
-              Copyright © {new Date().getFullYear()}, Aumni Crafts.
+              Copyright © {new Date().getFullYear()}, SSP Jari.
             </p>
             
             {/* Card logos */}
