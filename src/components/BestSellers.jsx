@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Star, ShoppingBag, ArrowRight } from 'lucide-react'
+import { Star, ArrowRight } from 'lucide-react'
 
 const products = [
   {
@@ -162,7 +162,7 @@ export default function BestSellers() {
                     </div>
                     
                     <button className="h-10 w-10 rounded-full bg-[#241C15] hover:bg-[#A63446] text-white flex items-center justify-center transition-colors duration-300 cursor-pointer shadow-md shadow-slate-900/10">
-                      <ShoppingBag className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
