@@ -166,7 +166,7 @@ export default function Hero() {
           >
             <div className="relative group max-w-md lg:max-w-full">
               <img
-                src="/hero.png"
+                src="/hero.webp"
                 alt="Heritage Handloom Craft Visual"
                 className="relative z-10 w-full h-auto object-contain "
               />
