@@ -3,6 +3,7 @@ import Categories from '../components/Categories'
 import BestSellers from '../components/BestSellers'
 import Features from '../components/Features'
 import Hero from '../components/Hero'
+import Contact from '../components/Contact'
 
 export default function Homepage() {
   return (
@@ -13,6 +14,7 @@ export default function Homepage() {
       <Categories />
       <BestSellers />
       <Features />
+      <Contact />
     </div>
   )
 }

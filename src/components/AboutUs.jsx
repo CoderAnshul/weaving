@@ -29,7 +29,7 @@ export default function AboutUs() {
     prefersReducedMotion ? { duration: 0 } : { duration, delay, ease: [0.65, 0, 0.35, 1] }
 
   return (
-    <section className="relative py-24 sm:py-28 overflow-hidden">
+    <section id="about" className="relative py-24 sm:py-28 overflow-hidden">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap');
         .font-display { font-family: 'Cormorant Garamond', serif; }

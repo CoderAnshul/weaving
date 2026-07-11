@@ -9,19 +9,15 @@ export default function Footer() {
   }
 
   const shopLinks = [
-    'Beads', 'Jewel Supplies', 'Stringing Supplies', 
-    'Craft Supplies', 'Sewing', 'Display & Tools', 
-    'Packing Supplies', 'Lifestyle +', 'More...'
+    { label: 'Jari', href: '/#catalogue' },
+    { label: 'Dori', href: '/#catalogue' },
+    { label: 'Metallic Film', href: '/#catalogue' }
   ]
 
   const infoLinks = [
-    'About Us', 'Shipping & Returns', 'Refund Policy', 
-    'Privacy Policy', 'Terms Of Service', 'Affiliate Login', 
-    'Affiliate Terms', 'Legal Metrology', 'Contact Us'
-  ]
-
-  const orderLinks = [
-    'Track Your Order', 'Order Pickup', 'Cash On Delivery', 'Returns'
+    { label: 'About Us', href: '/#about' },
+    { label: 'Contact Us', href: '/#contact' },
+    { label: 'Shiv Shakti Polyfilms', href: '/shiv-shakti-polyfilms' }
   ]
 
   return (
@@ -59,31 +55,30 @@ export default function Footer() {
                 </div>
                 <h4 className="text-slate-800 text-[14px] font-bold tracking-wider uppercase mb-4">Follow Us</h4>
                 <div className="flex items-center gap-3">
-                  {[
-                    { label: 'Facebook', path: 'M9 8H7v3h2v9h4v-9h3.6l.4-3H13V6c0-.5.5-1 1-1h2V2h-3a4 4 0 00-4 4v2z', isFill: true },
-                    { label: 'Instagram', path: 'M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z', isInstagram: true },
-                    { label: 'Pinterest', path: 'M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.9 6.46 9.38-.09-.8-.17-2.03.03-2.9.19-.82 1.21-5.12 1.21-5.12s-.31-.62-.31-1.54c0-1.44.84-2.52 1.88-2.52.88 0 1.31.67 1.31 1.47 0 .89-.57 2.22-.86 3.45-.24 1.03.52 1.87 1.54 1.87 1.85 0 3.27-1.95 3.27-4.76 0-2.49-1.79-4.23-4.34-4.23-2.96 0-4.7 2.22-4.7 4.52 0 .89.34 1.85.77 2.37.08.1.1.17.07.27-.08.33-.26 1.07-.3 1.22-.05.21-.17.26-.39.16-1.48-.69-2.4-2.86-2.4-4.6 0-3.75 2.73-7.2 7.86-7.2 4.13 0 7.34 2.94 7.34 6.88 0 4.1-2.58 7.4-6.17 7.4-1.2 0-2.34-.63-2.73-1.37l-.75 2.85c-.27 1.04-1 2.35-1.49 3.16C10.1 21.78 11.03 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z', isFill: true },
-                    { label: 'X (Twitter)', path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z', isFill: true }
-                  ].map((soc) => (
-                    <a
-                      key={soc.label}
-                      href="#"
-                      className="w-9 h-9 rounded-full bg-white hover:bg-[#8a2b53] text-slate-700 hover:text-white border border-slate-300 hover:border-[#8a2b53] flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
-                      aria-label={soc.label}
-                    >
-                      {soc.isInstagram ? (
-                        <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                          <path d={soc.path}/>
-                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                        </svg>
-                      ) : (
-                        <svg className="w-[17px] h-[17px]" fill="currentColor" viewBox="0 0 24 24">
-                          <path d={soc.path} />
-                        </svg>
-                      )}
-                    </a>
-                  ))}
+                  <a
+                    href="https://www.facebook.com/share/17sNWiTEiR/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-full bg-white hover:bg-[#8a2b53] text-slate-700 hover:text-white border border-slate-300 hover:border-[#8a2b53] flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
+                    aria-label="Facebook"
+                  >
+                    <svg className="w-[17px] h-[17px]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 8H7v3h2v9h4v-9h3.6l.4-3H13V6c0-.5.5-1 1-1h2V2h-3a4 4 0 00-4 4v2z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/ssp_sequenceandjari?igsh=MWNvZWhkN2I3YzF5ag=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-full bg-white hover:bg-[#8a2b53] text-slate-700 hover:text-white border border-slate-300 hover:border-[#8a2b53] flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm"
+                    aria-label="Instagram"
+                  >
+                    <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                  </a>
                 </div>
               </div>
 
@@ -120,10 +115,10 @@ export default function Footer() {
                 <div className="text-slate-600 text-[13px] leading-relaxed">
                   <span className="font-bold text-slate-800">Contact Us:</span>
                   <p className="mt-1 text-slate-600 hover:text-slate-900 transition-colors">
-                    SSP Jari Pvt Ltd<br />
-                    45 A, Bharathi Colony, 2nd Street W,<br />
-                    Peelamedu, Coimbatore, Tamilnadu,<br />
-                    India - 641004
+                    SSP Jari<br />
+                    shop no 1, Plot no 75, Street no 21,<br />
+                    Lambe Hanuman Rd, Ghansyamnagar,<br />
+                    Varachha, Surat, Gujarat 395006
                   </p>
                 </div>
               </div>
@@ -135,10 +130,10 @@ export default function Footer() {
                 </div>
                 <div className="text-slate-600 text-[13px] leading-relaxed">
                   <span className="font-bold text-slate-800">Customer Care:</span>{' '}
-                  <a href="tel:+918800553979" className="hover:text-[#8a2b53] transition-colors font-semibold text-slate-700">+91 8800553979</a>
+                  <a href="tel:+918866304000" className="hover:text-[#8a2b53] transition-colors font-semibold text-slate-700">+91 88663 04000</a>
                   <p className="mt-1">
                     <span className="font-bold text-slate-800">Whatsapp Support:</span>{' '}
-                    <a href="https://wa.me/919994945291" target="_blank" rel="noopener noreferrer" className="hover:text-[#8a2b53] transition-colors underline font-semibold text-slate-700">+91 9994945291</a>
+                    <a href="https://wa.me/918866304000" target="_blank" rel="noopener noreferrer" className="hover:text-[#8a2b53] transition-colors underline font-semibold text-slate-700">+91 88663 04000</a>
                   </p>
                 </div>
               </div>
@@ -169,12 +164,12 @@ export default function Footer() {
                 activeSection === 'shop' ? 'max-h-[350px] opacity-100' : 'max-h-0 lg:max-h-none opacity-0 lg:opacity-100'
               }`}>
                 {shopLinks.map((item) => (
-                  <li key={item}>
+                  <li key={item.label}>
                     <a 
-                      href="#" 
+                      href={item.href} 
                       className="text-slate-600 hover:text-[#8a2b53] transition-all duration-200 hover:translate-x-1 inline-block"
                     >
-                      {item}
+                      {item.label}
                     </a>
                   </li>
                 ))}
@@ -196,39 +191,12 @@ export default function Footer() {
                 activeSection === 'info' ? 'max-h-[350px] opacity-100' : 'max-h-0 lg:max-h-none opacity-0 lg:opacity-100'
               }`}>
                 {infoLinks.map((item) => (
-                  <li key={item}>
+                  <li key={item.label}>
                     <a 
-                      href="#" 
+                      href={item.href} 
                       className="text-slate-600 hover:text-[#8a2b53] transition-all duration-200 hover:translate-x-1 inline-block"
                     >
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 5: Order */}
-            <div className="lg:col-span-2 border-b border-slate-300/40 lg:border-none pb-4 lg:pb-0">
-              <button 
-                onClick={() => toggleSection('order')}
-                className="w-full lg:cursor-default flex items-center justify-between text-left focus:outline-none lg:pointer-events-none group py-2 lg:py-0"
-              >
-                <h4 className="text-slate-800 text-[14px] font-bold tracking-wider uppercase">Order</h4>
-                <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-300 lg:hidden ${
-                  activeSection === 'order' ? 'rotate-180' : ''
-                }`} />
-              </button>
-              <ul className={`mt-2 lg:mt-5 space-y-2.5 text-[13px] transition-all duration-300 overflow-hidden ${
-                activeSection === 'order' ? 'max-h-[350px] opacity-100' : 'max-h-0 lg:max-h-none opacity-0 lg:opacity-100'
-              }`}>
-                {orderLinks.map((item) => (
-                  <li key={item}>
-                    <a 
-                      href="#" 
-                      className="text-slate-600 hover:text-[#8a2b53] transition-all duration-200 hover:translate-x-1 inline-block"
-                    >
-                      {item}
+                      {item.label}
                     </a>
                   </li>
                 ))}
@@ -293,7 +261,7 @@ export default function Footer() {
 
       {/* Floating WhatsApp Support Button */}
       <a
-        href="https://wa.me/919994945291"
+        href="https://wa.me/918866304000"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-[#25d366] text-white p-3.5 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center whatsapp-pulse"

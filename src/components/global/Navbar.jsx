@@ -19,10 +19,9 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { id: 'home', label: 'Home', href: '#home' },
-    { id: 'catalogue', label: 'Catalogue', href: '#catalogue' },
-    { id: 'about', label: 'About', href: '#about' },
-    { id: 'gallery', label: 'Gallery', href: '#gallery' },
+    { id: 'home', label: 'Home', href: '/#home' },
+    { id: 'catalogue', label: 'Catalogue', href: '/#catalogue' },
+    { id: 'about', label: 'About', href: '/#about' },
   ]
 
   return (
@@ -34,13 +33,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center cursor-pointer">
+          <a href="/#home" className="flex-shrink-0 flex items-center cursor-pointer">
             <img 
               src="/SSP LOGO - Curve.png" 
               alt="Kishan Jari Pvt. Ltd Logo" 
               className="h-10 w-auto object-contain transition-transform duration-300 hover:scale-102"
             />
-          </div>
+          </a>
 
           {/* Desktop Navigation (Centered) */}
           <div className="hidden md:flex items-center justify-center flex-1 gap-10">
@@ -63,7 +62,7 @@ export default function Navbar() {
           {/* Contact Button */}
           <div className="hidden md:flex items-center">
             <a 
-              href="#contact"
+              href="/#contact"
               className="group border border-[#f87171] hover:bg-[#f87171]/5 px-6 py-2.5 rounded-full text-sm font-bold text-[#3b0764] transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-sm hover:shadow"
             >
               Contact
@@ -108,7 +107,7 @@ export default function Navbar() {
           ))}
           <div className="pt-4 px-3">
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setIsOpen(false)}
               className="w-full flex items-center justify-center gap-2 border border-[#f87171] hover:bg-[#f87171]/5 py-2.5 rounded-full text-base font-bold text-[#3b0764] transition-all duration-200"
             >
