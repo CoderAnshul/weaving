@@ -92,14 +92,14 @@ export default function Products() {
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-16">
+        <div className="flex flex-nowrap items-center justify-start md:justify-center gap-3 mb-16 overflow-x-auto no-scrollbar max-w-full py-2">
           {filters.map((f) => {
             const isActive = activeFilter === f.id
             return (
               <button
                 key={f.id}
                 onClick={() => setActiveFilter(f.id)}
-                className={`text-xs sm:text-sm font-semibold px-6 py-3 rounded-full border transition-all duration-300 cursor-pointer shadow-sm hover:scale-102 ${
+                className={`text-xs sm:text-sm font-semibold px-6 py-3 rounded-full border transition-all duration-300 cursor-pointer shadow-sm hover:scale-102 whitespace-nowrap shrink-0 ${
                   isActive
                     ? 'bg-[#A63446] border-[#A63446] text-white shadow-[#A63446]/20'
                     : 'bg-white border-slate-200 text-[#241C15]/70 hover:border-[#A63446]/50 hover:text-[#A63446]'

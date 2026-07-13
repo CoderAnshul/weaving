@@ -1,38 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Send, ArrowLeft, CheckCircle2 } from 'lucide-react'
+import { MapPin, Phone, Mail, ArrowLeft } from 'lucide-react'
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  })
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
   }, [])
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Simulate API request
-    setTimeout(() => {
-      setIsSubmitted(true)
-      setFormData({ name: '', email: '', phone: '', message: '' })
-    }, 800)
-  }
 
   return (
     <div className="min-h-screen bg-[#fafaf9] pt-28 pb-20 font-body">
@@ -151,108 +125,16 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Contact Form & Google Map */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Message Form (7 Columns) */}
-          <div className="lg:col-span-7 bg-white border border-slate-100 rounded-3xl p-6 sm:p-10 shadow-sm flex flex-col justify-between">
-            <div>
-              <h2 className="text-xl sm:text-2xl font-extrabold text-[#241C15] mb-2">Send Us a Message</h2>
-              <p className="text-xs sm:text-sm text-slate-500 mb-8">Fill out the quick form below and our sales agent will review your inquiry immediately.</p>
-              
-              {isSubmitted ? (
-                <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 text-center text-emerald-800 my-8">
-                  <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto mb-3" />
-                  <h3 className="font-bold text-base mb-1">Message Sent Successfully!</h3>
-                  <p className="text-xs sm:text-sm text-emerald-700/80">Thank you for writing to us. Our team will contact you very soon.</p>
-                  <button
-                    onClick={() => setIsSubmitted(false)}
-                    className="mt-5 text-xs font-bold text-emerald-800 hover:text-emerald-950 underline cursor-pointer"
-                  >
-                    Send another message
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="name" className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Full Name</label>
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="e.g. Rahul Patel"
-                        className="w-full bg-slate-50/50 border border-slate-200 focus:border-[#A63446] rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#A63446]/20 transition"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="email" className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Email Address</label>
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="rahul@example.com"
-                        className="w-full bg-slate-50/50 border border-slate-200 focus:border-[#A63446] rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#A63446]/20 transition"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="phone" className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Phone Number</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      id="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+91 98765 43210"
-                      className="w-full bg-slate-50/50 border border-slate-200 focus:border-[#A63446] rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#A63446]/20 transition"
-                    />
-                  </div>
-
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="message" className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Your Message / Inquiry</label>
-                    <textarea
-                      name="message"
-                      id="message"
-                      rows={5}
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Hi! I want to request a wholesale quote for the Metallic Film Rolls. Please contact me with details..."
-                      className="w-full bg-slate-50/50 border border-slate-200 focus:border-[#A63446] rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#A63446]/20 transition resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-[#A63446] hover:bg-[#8f2b3a] text-white text-xs sm:text-sm font-bold shadow-sm transition cursor-pointer"
-                  >
-                    <Send className="w-4 h-4" />
-                    <span>Send Inquiry Message</span>
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-
-          {/* Interactive Map (5 Columns) */}
-          <div className="lg:col-span-5 bg-white border border-slate-100 rounded-3xl p-4 shadow-sm overflow-hidden flex flex-col h-full min-h-[300px]">
-            <iframe
-              title="SSP Jari Surat Showroom Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.4674176465495!2d72.846505!3d21.213305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f479d2822a1%3A0xe54e6eb4dfd1c3cb!2sLambe%20Hanuman%20Rd%2C%20Surat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-              className="w-full h-full rounded-2xl border-0 min-h-[350px] flex-grow"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
+        {/* Google Map */}
+        <div className="bg-white border border-slate-100 rounded-3xl p-4 shadow-sm overflow-hidden h-[450px]">
+          <iframe
+            title="SSP Jari Surat Showroom Location Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.4674176465495!2d72.846505!3d21.213305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f479d2822a1%3A0xe54e6eb4dfd1c3cb!2sLambe%20Hanuman%20Rd%2C%20Surat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            className="w-full h-full rounded-2xl border-0"
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
 
       </div>
