@@ -118,10 +118,10 @@ export default function Footer() {
                 <div className="text-slate-600 text-[13px] leading-relaxed">
                   <span className="font-bold text-slate-800">Contact Us:</span>
                   <p className="mt-1 text-slate-600 hover:text-slate-900 transition-colors">
-                    SSP Jari<br />
-                    shop no 1, Plot no 75, Street no 21,<br />
-                    Lambe Hanuman Rd, Ghansyamnagar,<br />
-                    Varachha, Surat, Gujarat 395006
+                    SHIVSHAKTI POLYFILMS PVT. LTD.<br />
+                    R.S. No. 427, Block No. 412-B,<br />
+                    Vill - Pipodra, Tal - Mangrol,<br />
+                    Dist - Surat - 394110
                   </p>
                 </div>
               </div>

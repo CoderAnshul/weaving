@@ -53,11 +53,14 @@ export default function Contact() {
             <div className="p-4 rounded-full bg-white border border-slate-200 text-[#A63446] shrink-0 shadow-sm mb-5">
               <MapPin className="w-6 h-6" />
             </div>
-            <h3 className="font-body font-bold text-[#241C15] text-base mb-2">Surat Showroom</h3>
-            <p className="font-body text-sm text-[#241C15]/70 leading-relaxed">
-              shop no 1, Plot no 75, Street no 21,<br />
-              Lambe Hanuman Rd, Ghansyamnagar,<br />
-              Varachha, Surat, Gujarat 395006
+            <h3 className="font-body font-bold text-[#241C15] text-base mb-2">Registered Office</h3>
+            <p className="font-body text-sm text-[#241C15]/70 leading-relaxed font-semibold">
+              SHIVSHAKTI POLYFILMS PVT. LTD.
+            </p>
+            <p className="font-body text-sm text-[#241C15]/70 leading-relaxed mt-1">
+              R.S. No. 427, Block No. 412-B,<br />
+              Vill - Pipodra, Tal - Mangrol,<br />
+              Dist - Surat - 394110
             </p>
           </motion.div>
 

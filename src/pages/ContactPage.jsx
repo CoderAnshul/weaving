@@ -63,11 +63,14 @@ export default function ContactPage() {
             <div className="p-4 rounded-full bg-slate-50 border border-slate-100 text-[#A63446] mb-5">
               <MapPin className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-[#241C15] text-base mb-2">Surat Showroom</h3>
-            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-              Shop no 1, Plot no 75, Street no 21,<br />
-              Lambe Hanuman Rd, Ghansyamnagar,<br />
-              Varachha, Surat, Gujarat 395006
+            <h3 className="font-bold text-[#241C15] text-base mb-2">Registered Office</h3>
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-semibold">
+              SHIVSHAKTI POLYFILMS PVT. LTD.
+            </p>
+            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mt-1">
+              R.S. No. 427, Block No. 412-B,<br />
+              Vill - Pipodra, Tal - Mangrol,<br />
+              Dist - Surat - 394110
             </p>
           </div>
 
@@ -128,8 +131,8 @@ export default function ContactPage() {
         {/* Google Map */}
         <div className="bg-white border border-slate-100 rounded-3xl p-4 shadow-sm overflow-hidden h-[450px]">
           <iframe
-            title="SSP Jari Surat Showroom Location Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.4674176465495!2d72.846505!3d21.213305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f479d2822a1%3A0xe54e6eb4dfd1c3cb!2sLambe%20Hanuman%20Rd%2C%20Surat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            title="Shivshakti Polyfilms Location Map"
+            src="https://maps.google.com/maps?q=Shivshakti%20Polyfilms%20Pvt.%20Ltd.,%20Pipodara,%20Gujarat&t=&z=14&ie=UTF8&iwloc=&output=embed"
             className="w-full h-full rounded-2xl border-0"
             allowFullScreen=""
             loading="lazy"
