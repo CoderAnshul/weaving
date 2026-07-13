@@ -3,6 +3,9 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/global/Navbar'
 import Homepage from './pages/Homepage'
 import ShivShaktiPolyfilms from './pages/ShivShaktiPolyfilms'
+import Products from './pages/Products'
+import ProductDetail from './pages/ProductDetail'
+import ContactPage from './pages/ContactPage'
 import Footer from './components/global/Footer'
 
 function App() {
@@ -33,6 +36,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/shiv-shakti-polyfilms" element={<ShivShaktiPolyfilms />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
 

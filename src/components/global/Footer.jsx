@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { MapPin, Phone, Mail, ChevronDown } from 'lucide-react'
 
 export default function Footer() {
@@ -9,14 +10,14 @@ export default function Footer() {
   }
 
   const shopLinks = [
-    { label: 'Jari', href: '/#catalogue' },
-    { label: 'Dori', href: '/#catalogue' },
-    { label: 'Metallic Film', href: '/#catalogue' }
+    { label: 'Jari', href: '/products' },
+    { label: 'Dori', href: '/products' },
+    { label: 'Metallic Film', href: '/products' }
   ]
 
   const infoLinks = [
     { label: 'About Us', href: '/#about' },
-    { label: 'Contact Us', href: '/#contact' },
+    { label: 'Contact Us', href: '/contact' },
     { label: 'Shiv Shakti Polyfilms', href: '/shiv-shakti-polyfilms' }
   ]
 
@@ -47,11 +48,13 @@ export default function Footer() {
             <div className="lg:col-span-4 space-y-8 pr-0 lg:pr-6">
               <div>
                 <div className="mb-6">
-                  <img 
-                    src="/SSP LOGO - Curve.png" 
-                    alt="SSP Logo" 
-                    className="h-12 w-auto object-contain transition-transform duration-300 hover:scale-102"
-                  />
+                  <Link to="/" className="inline-block">
+                    <img 
+                      src="/SSP LOGO - Curve.png" 
+                      alt="SSP Logo" 
+                      className="h-12 w-auto object-contain transition-transform duration-300 hover:scale-102"
+                    />
+                  </Link>
                 </div>
                 <h4 className="text-slate-800 text-[14px] font-bold tracking-wider uppercase mb-4">Follow Us</h4>
                 <div className="flex items-center gap-3">
@@ -144,7 +147,7 @@ export default function Footer() {
                   <Mail className="w-4 h-4" />
                 </div>
                 <div className="text-slate-600 text-[13px] leading-relaxed mt-1">
-                  <a href="mailto:support@sspjari.com" className="underline hover:text-[#8a2b53] transition-colors font-semibold text-slate-750">support@sspjari.com</a>
+                  <a href="mailto:support@sspjari.com" className="underline hover:text-[#8a2b53] transition-colors font-semibold text-slate-755">support@sspjari.com</a>
                 </div>
               </div>
             </div>
@@ -165,12 +168,12 @@ export default function Footer() {
               }`}>
                 {shopLinks.map((item) => (
                   <li key={item.label}>
-                    <a 
-                      href={item.href} 
+                    <Link 
+                      to={item.href} 
                       className="text-slate-600 hover:text-[#8a2b53] transition-all duration-200 hover:translate-x-1 inline-block"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -192,12 +195,12 @@ export default function Footer() {
               }`}>
                 {infoLinks.map((item) => (
                   <li key={item.label}>
-                    <a 
-                      href={item.href} 
+                    <Link 
+                      to={item.href} 
                       className="text-slate-600 hover:text-[#8a2b53] transition-all duration-200 hover:translate-x-1 inline-block"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

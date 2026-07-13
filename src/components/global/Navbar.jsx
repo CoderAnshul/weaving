@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Menu, X, ArrowRight } from 'lucide-react'
 
 export default function Navbar() {
@@ -20,7 +21,7 @@ export default function Navbar() {
 
   const navLinks = [
     { id: 'home', label: 'Home', href: '/#home' },
-    { id: 'catalogue', label: 'Catalogue', href: '/#catalogue' },
+    { id: 'products', label: 'Products', href: '/products' },
     { id: 'about', label: 'About', href: '/#about' },
   ]
 
@@ -33,20 +34,20 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/#home" className="flex-shrink-0 flex items-center cursor-pointer">
+          <Link to="/" className="flex-shrink-0 flex items-center cursor-pointer">
             <img 
               src="/SSP LOGO - Curve.png" 
               alt="Kishan Jari Pvt. Ltd Logo" 
               className="h-10 w-auto object-contain transition-transform duration-300 hover:scale-102"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation (Centered) */}
           <div className="hidden md:flex items-center justify-center flex-1 gap-10">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.id}
-                href={link.href}
+                to={link.href}
                 onClick={() => setActiveTab(link.id)}
                 className={`text-sm font-semibold transition-colors duration-200 ${
                   activeTab === link.id
@@ -55,19 +56,19 @@ export default function Navbar() {
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* Contact Button */}
           <div className="hidden md:flex items-center">
-            <a 
-              href="/#contact"
+            <Link 
+              to="/contact"
               className="group border border-[#f87171] hover:bg-[#f87171]/5 px-6 py-2.5 rounded-full text-sm font-bold text-[#3b0764] transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-sm hover:shadow"
             >
               Contact
               <ArrowRight className="w-4 h-4 text-[#3b0764] group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -89,9 +90,9 @@ export default function Navbar() {
       }`}>
         <div className="px-4 pt-2 pb-6 space-y-2">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.id}
-              href={link.href}
+              to={link.href}
               onClick={() => {
                 setActiveTab(link.id)
                 setIsOpen(false)
@@ -103,17 +104,17 @@ export default function Navbar() {
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <div className="pt-4 px-3">
-            <a
-              href="/#contact"
+            <Link
+              to="/contact"
               onClick={() => setIsOpen(false)}
               className="w-full flex items-center justify-center gap-2 border border-[#f87171] hover:bg-[#f87171]/5 py-2.5 rounded-full text-base font-bold text-[#3b0764] transition-all duration-200"
             >
               Contact
               <ArrowRight className="w-4 h-4 text-[#3b0764]" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
