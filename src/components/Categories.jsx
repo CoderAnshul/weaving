@@ -143,11 +143,6 @@ export default function Categories() {
                         </h3>
                       </Link>
 
-                      {/* Price Tag */}
-                      <div className="flex items-baseline gap-2 mb-4">
-                        <span className="font-body text-xl font-bold text-[#A63446]">{p.price}</span>
-                        <span className="font-body text-xs text-slate-400">Glow price rate</span>
-                      </div>
 
                       <p className="font-body text-xs text-[#241C15]/70 leading-relaxed mb-5 line-clamp-3">
                         {p.description}
@@ -186,7 +181,7 @@ export default function Categories() {
                           <span>Call</span>
                         </a>
                         <a
-                          href={`https://wa.me/918866304000?text=Hi!%20I%20am%20interested%20in%20your%20product%3A%20${encodeURIComponent(p.name)}%20priced%20at%20${encodeURIComponent(p.price)}.%20Please%20provide%20more%20details.`}
+                          href={`https://wa.me/918866304000?text=Hi!%20I%20am%20interested%20in%20your%20product%3A%20${encodeURIComponent(p.name)}.%20Please%20provide%20more%20details.`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl border border-emerald-500 hover:bg-emerald-50 text-emerald-600 font-body text-[11px] font-semibold transition cursor-pointer text-center"

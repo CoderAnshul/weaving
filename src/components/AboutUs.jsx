@@ -125,14 +125,24 @@ export default function AboutUs() {
           {/* Stats strip */}
           <motion.div
             variants={fadeUp}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-6 mt-16 pt-10 border-t border-[#241C15]/10"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mt-16 pt-10 border-t border-[#241C15]/10"
           >
             {stats.map((s) => (
-              <div key={s.id} className="flex flex-col items-center">
-                <span className="font-display text-3xl sm:text-4xl font-semibold" style={{ color: s.color }}>
+              <div
+                key={s.id}
+                className="flex flex-col items-center bg-white/90 backdrop-blur-xs border border-[#241C15]/10 rounded-xl p-5 sm:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
+                style={{ borderTop: `3px solid ${s.color}` }}
+              >
+                <span
+                  className="font-display text-3xl sm:text-4xl font-semibold select-none"
+                  style={{
+                    color: s.color,
+                    textShadow: '0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 12px rgba(0, 0, 0, 0.04)',
+                  }}
+                >
                   {s.value}
                 </span>
-                <span className="font-body text-xs sm:text-sm text-[#241C15]/60 mt-1 tracking-wide">
+                <span className="font-body text-xs sm:text-sm text-[#241C15]/75 mt-2 tracking-wide font-medium text-center">
                   {s.label}
                 </span>
               </div>

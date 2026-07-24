@@ -132,13 +132,7 @@ export default function ProductDetail() {
                   {product.name}
                 </h1>
 
-                {/* Price Display */}
-                <div className="flex items-baseline gap-2 mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                  <div className="flex flex-col">
-                    <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Estimated Wholesaler Rate</span>
-                    <span className="text-2xl sm:text-3xl font-extrabold text-[#A63446] mt-0.5">{product.price}</span>
-                  </div>
-                </div>
+
 
                 <div className="mb-8">
                   <h3 className="text-xs font-bold uppercase tracking-wider text-[#241C15]/50 mb-3">Product Description</h3>
@@ -160,7 +154,7 @@ export default function ProductDetail() {
                     <span>Call Sales Manager</span>
                   </a>
                   <a
-                    href={`https://wa.me/918866304000?text=Hi!%20I%20am%20interested%20in%20your%20product%3A%20${encodeURIComponent(product.name)}%20(${encodeURIComponent(product.price)}).%20Please%20send%20specs%20and%20delivery%20terms.`}
+                    href={`https://wa.me/918866304000?text=Hi!%20I%20am%20interested%20in%20your%20product%3A%20${encodeURIComponent(product.name)}.%20Please%20send%20specs%20and%20delivery%20terms.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-2 py-4 px-6 rounded-2xl border border-emerald-500 hover:bg-emerald-50 text-emerald-600 text-sm font-semibold transition-all cursor-pointer text-center"
@@ -239,10 +233,6 @@ export default function ProductDetail() {
                       {p.name}
                     </h3>
 
-                    <div className="border-t border-slate-100 pt-2.5 mt-auto flex justify-between items-center">
-                      <span className="text-[10px] text-slate-400">Rate</span>
-                      <span className="font-bold text-sm text-[#A63446]">{p.price}</span>
-                    </div>
                   </div>
                 </Link>
               )

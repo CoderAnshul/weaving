@@ -89,16 +89,16 @@ export default function BestSellers() {
                   </Link>
 
                   {/* Reviews count */}
-                  <span className="font-body text-[11px] text-[#241C15]/50 mb-4 block">
+                  <span className="font-body text-[11px] text-[#241C15]/50 mb-3 block">
                     ({p.reviews} verified purchases)
                   </span>
 
-                  <div className="border-t border-slate-100 pt-3 mt-auto">
-                    <div className="flex justify-between items-baseline mb-4">
-                      <span className="font-body text-xs text-slate-400">Rate</span>
-                      <span className="font-body font-bold text-lg text-[#A63446]">{p.price}</span>
-                    </div>
+                  {/* Description */}
+                  <p className="font-body text-xs text-[#241C15]/70 leading-relaxed mb-5 line-clamp-3">
+                    {p.description}
+                  </p>
 
+                  <div className="border-t border-slate-100 pt-3 mt-auto">
                     {/* Action Row */}
                     <div className="flex gap-2">
                       <Link
@@ -115,7 +115,7 @@ export default function BestSellers() {
                         <span>Call</span>
                       </a>
                       <a
-                        href={`https://wa.me/918866304000?text=Hi!%20I%20am%20interested%20in%20your%20product%3A%20${encodeURIComponent(p.name)}%20priced%20at%20${encodeURIComponent(p.price)}.%20Please%20provide%20more%20details.`}
+                        href={`https://wa.me/918866304000?text=Hi!%20I%20am%20interested%20in%20your%20product%3A%20${encodeURIComponent(p.name)}.%20Please%20provide%20more%20details.`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl border border-emerald-500 hover:bg-emerald-50 text-emerald-600 font-body text-[11px] font-semibold transition cursor-pointer text-center"

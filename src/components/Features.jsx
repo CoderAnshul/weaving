@@ -51,7 +51,7 @@ const features = [
   },
 ]
 
-// quadratic thread paths from each badge toward the cone (desktop only)
+// quadratic thread paths from each badge toward the roll (desktop only)
 const threadPaths = {
   shine: 'M140,150 Q320,185 430,235',
   smooth: 'M140,380 Q320,345 435,295',
@@ -59,68 +59,69 @@ const threadPaths = {
   length: 'M860,380 Q680,345 565,295',
 }
 
-const CONE_RINGS = [
-  { y: 90, rx: 24, ry: 5 },
-  { y: 130, rx: 34, ry: 6 },
-  { y: 175, rx: 44, ry: 6 },
-  { y: 225, rx: 54, ry: 7 },
-  { y: 280, rx: 60, ry: 7 },
-  { y: 335, rx: 62, ry: 7 },
-  { y: 390, rx: 58, ry: 7 },
-  { y: 440, rx: 46, ry: 6 },
-]
-
-const conePath =
-  'M60,470 C40,400 46,300 66,215 C80,150 100,95 130,55 L230,55 C260,95 280,150 294,215 C314,300 320,400 300,470 C300,480 60,480 60,470 Z'
+// Barrel-shaped body for the metallic foil roll (slight outward bulge,
+// like a real roll of film/foil rather than a tapered cone).
+const rollPath =
+  'M100,110 C86,220 86,340 100,450 L260,450 C274,340 274,220 260,110 Z'
 
 function ShimmerCone({ prefersReducedMotion, variant = 'default' }) {
   // Each mounted instance needs its own gradient/clip IDs — this component
   // renders twice (desktop + mobile), and duplicate SVG ids on the same
   // page is invalid and can silently break the url(#...) fill reference
-  // in one of the copies (this was the cause of the hollow/missing cone
-  // body on mobile).
-  const coneFillId = `feature-cone-fill-${variant}`
-  const capFillId = `feature-cap-fill-${variant}`
+  // in one of the copies (this was the cause of the hollow/missing body
+  // on mobile).
+  const rollFillId = `feature-roll-fill-${variant}`
+  const coreFillId = `feature-core-fill-${variant}`
   const sweepId = `shimmer-sweep-${variant}`
-  const clipId = `cone-clip-${variant}`
+  const clipId = `roll-clip-${variant}`
 
   return (
     <svg viewBox="0 0 360 500" className="w-full h-full">
       <defs>
-        <linearGradient id={coneFillId} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#e0be7c" />
-          <stop offset="35%" stopColor="#8a6a34" />
-          <stop offset="55%" stopColor="#a9895a" />
-          <stop offset="100%" stopColor="#6b501f" />
+        {/* Polished chrome/steel gradient — light/dark bands read as a
+            reflective cylindrical surface */}
+        <linearGradient id={rollFillId} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#f4f6f7" />
+          <stop offset="14%" stopColor="#aeb4b7" />
+          <stop offset="30%" stopColor="#62676b" />
+          <stop offset="46%" stopColor="#e6e9eb" />
+          <stop offset="55%" stopColor="#ffffff" />
+          <stop offset="66%" stopColor="#83898c" />
+          <stop offset="82%" stopColor="#4f5457" />
+          <stop offset="100%" stopColor="#c7ccce" />
         </linearGradient>
-        <linearGradient id={capFillId} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#3a3d40" />
-          <stop offset="50%" stopColor="#17181a" />
-          <stop offset="100%" stopColor="#050505" />
-        </linearGradient>
+
+        {/* Hollow core visible at the open end of the roll */}
+        <radialGradient id={coreFillId} cx="50%" cy="45%" r="60%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="65%" stopColor="#f2ede3" />
+          <stop offset="100%" stopColor="#d8d2c4" />
+        </radialGradient>
+
         <linearGradient id={sweepId} x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
-          <stop offset="50%" stopColor="#ffffff" stopOpacity="0.55" />
+          <stop offset="50%" stopColor="#ffffff" stopOpacity="0.6" />
           <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
         </linearGradient>
+
         <clipPath id={clipId}>
-          <path d={conePath} />
+          <path d={rollPath} />
         </clipPath>
       </defs>
 
-      <ellipse cx="180" cy="482" rx="90" ry="12" fill="#241C15" opacity="0.12" />
-      <path d={conePath} fill={`url(#${coneFillId})`} />
+      {/* ground shadow */}
+      <ellipse cx="180" cy="472" rx="85" ry="12" fill="#241C15" opacity="0.15" />
 
-      {CONE_RINGS.map((r) => (
-        <ellipse key={r.y} cx="180" cy={r.y + 10} rx={r.rx} ry={r.ry} fill="none" stroke="#4a350f" strokeWidth="1.4" opacity="0.45" />
-      ))}
+      {/* barrel body */}
+      <path d={rollPath} fill={`url(#${rollFillId})`} stroke="#4d5254" strokeWidth="0.75" />
 
+      {/* moving shimmer sweep, clipped to the barrel silhouette */}
       <g clipPath={`url(#${clipId})`}>
         <motion.rect
           x="-140"
-          y="20"
-          width="90"
-          height="480"
+          y="90"
+          width="80"
+          height="400"
           fill={`url(#${sweepId})`}
           initial={{ x: -140 }}
           animate={prefersReducedMotion ? { x: -140 } : { x: 420 }}
@@ -133,12 +134,21 @@ function ShimmerCone({ prefersReducedMotion, variant = 'default' }) {
         />
       </g>
 
-      <rect x="150" y="30" width="60" height="30" rx="4" fill={`url(#${capFillId})`} />
-      <ellipse cx="180" cy="30" rx="30" ry="8" fill="#4a4d52" />
-      <ellipse cx="180" cy="58" rx="30" ry="7" fill="#0d0d0d" />
-      <rect x="118" y="455" width="124" height="24" rx="6" fill="#17181a" />
+      {/* static highlight streaks for extra polish, on top of the sweep */}
+      <rect x="118" y="115" width="10" height="330" rx="5" fill="#ffffff" opacity="0.35" />
+      <rect x="228" y="130" width="6" height="300" rx="3" fill="#ffffff" opacity="0.2" />
 
-      <ellipse cx="180" cy="300" rx="46" ry="27" fill="#F3EAD9" stroke="#241C15" strokeOpacity="0.15" />
+      {/* open top end — chrome rim around the hollow paper/plastic core */}
+      <ellipse cx="180" cy="110" rx="80" ry="22" fill={`url(#${rollFillId})`} stroke="#4d5254" strokeWidth="0.75" />
+      <ellipse cx="180" cy="110" rx="46" ry="13" fill={`url(#${coreFillId})`} />
+      <ellipse cx="180" cy="109" rx="24" ry="7" fill="#2a2a28" opacity="0.85" />
+      <ellipse cx="180" cy="107" rx="24" ry="6" fill="#050505" opacity="0.55" />
+
+      {/* base — roll resting on the surface */}
+      <ellipse cx="180" cy="450" rx="80" ry="20" fill={`url(#${rollFillId})`} stroke="#4d5254" strokeWidth="0.75" opacity="0.95" />
+
+      {/* brand plate */}
+      <ellipse cx="180" cy="300" rx="44" ry="25" fill="#F3EAD9" stroke="#241C15" strokeOpacity="0.15" />
       <text x="180" y="296" textAnchor="middle" fontFamily="'Cormorant Garamond', serif" fontStyle="italic" fontWeight="600" fontSize="21" fill="#A63446">
         SSP
       </text>

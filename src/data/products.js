@@ -10,9 +10,9 @@ export const products = [
     reviews: 48,
     description: 'We are a leading manufacturer & supplier of Golden Coated Polyester Film Roll. This premium quality product is highly useful for the bangles industry and other decorative applications.',
     images: [
-      '/products/prod1/1.webp',
+      '/products/prod1/1.png',
       '/products/prod1/2.webp',
-      '/products/prod1/3.webp'
+      '/products/prod1/3.png'
     ],
     specs: {
       'Packaging Type': 'Roll',
@@ -93,5 +93,57 @@ export const products = [
       'Packaging Size': '25 Kg',
       'Country of Origin': 'Made in India'
     }
+  },
+  {
+    id: 'prod5',
+    name: 'Pet Sequin Film',
+    category: 'other',
+    price: '₹ 175 / Kg',
+    minOrder: '25 Kg',
+    badge: 'New Arrival',
+    rating: 4.9,
+    reviews: 28,
+    description: 'We are leading manufacturer & supplier of Pet Sequin Film. We ensure to provide good quality products to our customers.',
+    images: [
+      '/products/prod5/1.webp',
+      '/products/prod5/2.webp',
+      '/products/prod5/3.webp',
+      '/products/prod5/4.webp'
+    ],
+    specs: {
+      'Design': 'Plain',
+      'Material': 'Polyester',
+      'Color': 'Pink',
+      'Size': '500 Meter',
+      'Shape': 'Round',
+      'Usage/Application': 'Industrial',
+      'Country of Origin': 'Made in India'
+    }
+  },
+  {
+    id: 'prod6',
+    name: '30mm Sequin Square',
+    category: 'other',
+    price: '₹ 250 / Kg',
+    minOrder: '50 Kg',
+    badge: 'Premium Quality',
+    rating: 4.8,
+    reviews: 32,
+    description: 'Premium 30mm Sequin Square sheets, manufactured with top-grade PET. Known for high consistency and wide industrial applications across textile and embroidery industries in India.',
+    images: [
+      '/products/prod6/1.webp',
+      '/products/prod6/2.webp',
+      '/products/prod6/3.webp',
+      '/products/prod6/4.webp'
+    ],
+    specs: {
+      'Design': 'Plain',
+      'Material': 'PET',
+      'Color': 'Golden',
+      'Size': '500 m',
+      'Usage/Application': 'Industrial',
+      'Country of Origin': 'Made in India'
+    }
   }
 ]
+

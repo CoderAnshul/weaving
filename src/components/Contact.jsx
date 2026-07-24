@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail } from 'lucide-react'
+import { MapPin, Phone, Mail, Store, Building } from 'lucide-react'
 
 export default function Contact() {
   return (
@@ -42,83 +42,80 @@ export default function Contact() {
         {/* 3-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* Card 1: Address */}
+          {/* Card 1: Shop */}
           <motion.div
-            className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#fafaf9] border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300"
+            className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#fafaf9] border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 h-full"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <div className="p-4 rounded-full bg-white border border-slate-200 text-[#A63446] shrink-0 shadow-sm mb-5">
-              <MapPin className="w-6 h-6" />
+              <Store className="w-6 h-6" />
             </div>
-            <h3 className="font-body font-bold text-[#241C15] text-base mb-2">Registered Office</h3>
-            <p className="font-body text-sm text-[#241C15]/70 leading-relaxed font-semibold">
-              SHIVSHAKTI POLYFILMS PVT. LTD.
-            </p>
-            <p className="font-body text-sm text-[#241C15]/70 leading-relaxed mt-1">
-              R.S. No. 427, Block No. 412-B,<br />
-              Vill - Pipodra, Tal - Mangrol,<br />
-              Dist - Surat - 394110
+            <h3 className="font-body font-bold text-[#241C15] text-lg mb-3">Retail Showroom</h3>
+            <p className="font-body text-sm text-[#241C15]/80 leading-relaxed max-w-xs">
+              Shop no 1, Plot no 75, Street no 21,<br />
+              Lambe Hanuman Rd, Ghansyamnagar,<br />
+              Varachha, Surat, Gujarat - 395006
             </p>
           </motion.div>
 
-          {/* Card 2: Phone & WhatsApp */}
+          {/* Card 2: Factory */}
           <motion.div
-            className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#fafaf9] border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300"
+            className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#fafaf9] border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 h-full"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="p-4 rounded-full bg-white border border-slate-200 text-[#146B5E] shrink-0 shadow-sm mb-5">
-              <Phone className="w-6 h-6" />
+              <Building className="w-6 h-6" />
             </div>
-            <h3 className="font-body font-bold text-[#241C15] text-base mb-2">Phone &amp; WhatsApp</h3>
-            <div className="font-body text-sm text-[#241C15]/70 space-y-1.5">
-              <p>
-                <span className="font-medium text-[#241C15]/60">Call Us:</span>{' '}
-                <a href="tel:+918866304000" className="hover:text-[#8a2b53] transition-colors font-semibold text-[#241C15]">+91 88663 04000</a>
-              </p>
-              <p>
-                <span className="font-medium text-[#241C15]/60">WhatsApp:</span>{' '}
-                <a
-                  href="https://wa.me/918866304000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#146B5E] text-[#146B5E] font-semibold transition-colors underline decoration-[#146B5E]/30"
-                >
-                  +91 88663 04000
-                </a>
-              </p>
-            </div>
+            <h3 className="font-body font-bold text-[#241C15] text-lg mb-1">Factory &amp; Office</h3>
+            <p className="font-body text-[10px] font-semibold text-[#146B5E] tracking-wider uppercase mb-3">
+              SHIVSHAKTI POLYFILMS PVT. LTD.
+            </p>
+            <p className="font-body text-sm text-[#241C15]/80 leading-relaxed max-w-xs">
+              R.S. No. 427, Block No. 412-B,<br />
+              Vill - Pipodra, Tal - Mangrol,<br />
+              Dist - Surat - 394110
+            </p>
           </motion.div>
 
-          {/* Card 3: Email & Socials */}
+          {/* Card 3: Support & Connect */}
           <motion.div
-            className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#fafaf9] border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300"
+            className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#fafaf9] border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 h-full"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="p-4 rounded-full bg-white border border-slate-200 text-[#2B3A67] shrink-0 shadow-sm mb-5">
-              <Mail className="w-6 h-6" />
+              <Phone className="w-6 h-6" />
             </div>
-            <h3 className="font-body font-bold text-[#241C15] text-base mb-2">Email &amp; Socials</h3>
-            <div className="font-body text-sm text-[#241C15]/70 space-y-4 w-full">
-              <p>
+            <h3 className="font-body font-bold text-[#241C15] text-lg mb-3">Support &amp; Connect</h3>
+            
+            <div className="space-y-4 w-full font-body text-sm">
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-[10px] text-[#241C15]/50 uppercase tracking-wider font-semibold">Phone &amp; WhatsApp</span>
+                <a href="tel:+918866304000" className="hover:text-[#8a2b53] transition-colors font-semibold text-[#241C15]">+91 88663 04000</a>
+                <a href="tel:+919099054071" className="hover:text-[#8a2b53] transition-colors font-semibold text-[#241C15]">+91 90990 54071</a>
+              </div>
+              
+              <div className="flex flex-col items-center gap-1 border-t border-[#241C15]/10 pt-3">
+                <span className="text-[10px] text-[#241C15]/50 uppercase tracking-wider font-semibold">Email</span>
                 <a href="mailto:support@sspjari.com" className="hover:text-[#8a2b53] transition-colors font-semibold text-[#241C15] underline decoration-[#241C15]/20">
                   support@sspjari.com
                 </a>
-              </p>
-              <div className="flex gap-3 justify-center">
+              </div>
+
+              <div className="flex gap-3 justify-center border-t border-[#241C15]/10 pt-3">
                 <a
                   href="https://www.facebook.com/share/17sNWiTEiR/?mibextid=wwXIfr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white border border-slate-200 hover:bg-[#8a2b53] hover:text-white hover:border-[#8a2b53] text-[#241C15]/70 flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-105"
+                  className="w-9 h-9 rounded-full bg-white border border-slate-200 hover:bg-[#8a2b53] hover:text-white hover:border-[#8a2b53] text-[#241C15]/70 flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-105"
                   aria-label="Facebook"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -129,7 +126,7 @@ export default function Contact() {
                   href="https://www.instagram.com/ssp_sequenceandjari?igsh=MWNvZWhkN2I3YzF5ag=="
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white border border-slate-200 hover:bg-[#8a2b53] hover:text-white hover:border-[#8a2b53] text-[#241C15]/70 flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-105"
+                  className="w-9 h-9 rounded-full bg-white border border-slate-200 hover:bg-[#8a2b53] hover:text-white hover:border-[#8a2b53] text-[#241C15]/70 flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-105"
                   aria-label="Instagram"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">

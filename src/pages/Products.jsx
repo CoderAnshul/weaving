@@ -23,6 +23,8 @@ export default function Products() {
     prod2: 0,
     prod3: 0,
     prod4: 0,
+    prod5: 0,
+    prod6: 0,
   })
 
   // Scroll to top on mount
@@ -190,12 +192,6 @@ export default function Products() {
                           {p.name}
                         </h3>
                       </Link>
-
-                      {/* Price Tag */}
-                      <div className="flex items-baseline gap-2 mb-3">
-                        <span className="text-xl font-bold text-[#A63446]">{p.price}</span>
-                        <span className="text-xs text-slate-400">Wholesale price</span>
-                      </div>
 
                       <p className="text-xs text-[#241C15]/70 leading-relaxed mb-5 line-clamp-3">
                         {p.description}

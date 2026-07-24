@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { MapPin, Phone, Mail, ArrowLeft } from 'lucide-react'
+import { MapPin, Phone, Mail, ArrowLeft, Store, Building } from 'lucide-react'
 
 export default function ContactPage() {
   // Scroll to top on mount
@@ -58,72 +58,82 @@ export default function ContactPage() {
 
         {/* 3-Column Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {/* Card 1: Showroom */}
-          <div className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center text-center">
+          {/* Card 1: Shop */}
+          <div className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center text-center h-full">
             <div className="p-4 rounded-full bg-slate-50 border border-slate-100 text-[#A63446] mb-5">
-              <MapPin className="w-6 h-6" />
+              <Store className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-[#241C15] text-base mb-2">Registered Office</h3>
-            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-semibold">
+            <h3 className="font-bold text-[#241C15] text-lg mb-3">Retail Showroom</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xs">
+              Shop no 1, Plot no 75, Street no 21,<br />
+              Lambe Hanuman Rd, Ghansyamnagar,<br />
+              Varachha, Surat, Gujarat - 395006
+            </p>
+          </div>
+
+          {/* Card 2: Factory */}
+          <div className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center text-center h-full">
+            <div className="p-4 rounded-full bg-slate-50 border border-slate-100 text-[#146B5E] mb-5">
+              <Building className="w-6 h-6" />
+            </div>
+            <h3 className="font-bold text-[#241C15] text-lg mb-1">Factory &amp; Office</h3>
+            <p className="text-[10px] font-semibold text-[#146B5E] tracking-wider uppercase mb-3">
               SHIVSHAKTI POLYFILMS PVT. LTD.
             </p>
-            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mt-1">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xs">
               R.S. No. 427, Block No. 412-B,<br />
               Vill - Pipodra, Tal - Mangrol,<br />
               Dist - Surat - 394110
             </p>
           </div>
 
-          {/* Card 2: Call & WhatsApp */}
-          <div className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center text-center">
-            <div className="p-4 rounded-full bg-slate-50 border border-slate-100 text-[#146B5E] mb-5">
+          {/* Card 3: Support & Connect */}
+          <div className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center text-center h-full">
+            <div className="p-4 rounded-full bg-slate-50 border border-slate-100 text-[#2B3A67] mb-5">
               <Phone className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-[#241C15] text-base mb-2">Phone &amp; WhatsApp</h3>
-            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mb-2">
-              <span className="font-semibold text-slate-700">Direct Line:</span>{' '}
-              <a href="tel:+918866304000" className="hover:text-[#A63446] transition-colors font-medium">+91 88663 04000</a>
-            </p>
-            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-              <span className="font-semibold text-slate-700">WhatsApp Support:</span>{' '}
-              <a href="https://wa.me/918866304000" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-600 transition-colors underline font-medium">+91 88663 04000</a>
-            </p>
-          </div>
+            <h3 className="font-bold text-[#241C15] text-lg mb-3">Support &amp; Connect</h3>
+            
+            <div className="space-y-4 w-full text-xs sm:text-sm text-slate-600">
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Phone &amp; WhatsApp</span>
+                <a href="tel:+918866304000" className="hover:text-[#A63446] transition-colors font-semibold text-[#241C15]">+91 88663 04000</a>
+                <a href="tel:+919099054071" className="hover:text-[#A63446] transition-colors font-semibold text-[#241C15]">+91 90990 54071</a>
+              </div>
+              
+              <div className="flex flex-col items-center gap-1 border-t border-slate-100 pt-3">
+                <span className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Email</span>
+                <a href="mailto:support@sspjari.com" className="hover:text-[#A63446] transition-colors font-semibold text-[#241C15] underline decoration-[#241C15]/20">
+                  support@sspjari.com
+                </a>
+              </div>
 
-          {/* Card 3: Email & Socials */}
-          <div className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center text-center">
-            <div className="p-4 rounded-full bg-slate-50 border border-slate-100 text-purple-700 mb-5">
-              <Mail className="w-6 h-6" />
-            </div>
-            <h3 className="font-bold text-[#241C15] text-base mb-2">Email &amp; Connect</h3>
-            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mb-4">
-              <a href="mailto:support@sspjari.com" className="hover:text-[#A63446] transition-colors font-medium underline">support@sspjari.com</a>
-            </p>
-            <div className="flex gap-2.5">
-              <a
-                href="https://www.facebook.com/share/17sNWiTEiR/?mibextid=wwXIfr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-slate-200 hover:bg-slate-900 hover:text-white flex items-center justify-center transition"
-                aria-label="Facebook"
-              >
-                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 8H7v3h2v9h4v-9h3.6l.4-3H13V6c0-.5.5-1 1-1h2V2h-3a4 4 0 00-4 4v2z" />
-                </svg>
-              </a>
-              <a
-                href="https://www.instagram.com/ssp_sequenceandjari?igsh=MWNvZWhkN2I3YzF5ag=="
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full border border-slate-200 hover:bg-slate-900 hover:text-white flex items-center justify-center transition"
-                aria-label="Instagram"
-              >
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                </svg>
-              </a>
+              <div className="flex gap-2.5 justify-center border-t border-slate-100 pt-3">
+                <a
+                  href="https://www.facebook.com/share/17sNWiTEiR/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-full border border-slate-200 hover:bg-slate-900 hover:text-white flex items-center justify-center transition"
+                  aria-label="Facebook"
+                >
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 8H7v3h2v9h4v-9h3.6l.4-3H13V6c0-.5.5-1 1-1h2V2h-3a4 4 0 00-4 4v2z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/ssp_sequenceandjari?igsh=MWNvZWhkN2I3YzF5ag=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-full border border-slate-200 hover:bg-slate-900 hover:text-white flex items-center justify-center transition"
+                  aria-label="Instagram"
+                >
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>

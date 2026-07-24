@@ -164,12 +164,46 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.45 }}
             className="lg:col-span-5 relative flex justify-center lg:justify-end"
           >
-            <div className="relative group max-w-md lg:max-w-full">
-              <img
-                src="/hero.webp"
-                alt="Heritage Handloom Craft Visual"
-                className="relative z-10 w-full h-auto object-contain "
+            <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center p-4">
+              {/* Decorative background blur shape */}
+              <motion.div
+                animate={{
+                  borderRadius: [
+                    "50% 50% 30% 70% / 50% 60% 40% 50%",
+                    "30% 70% 70% 30% / 50% 30% 70% 50%",
+                    "50% 50% 30% 70% / 50% 60% 40% 50%"
+                  ]
+                }}
+                transition={{
+                  duration: 12,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute inset-4 bg-gradient-to-tr from-[#146B5E]/20 to-[#A63446]/20 blur-xl opacity-60 scale-105 pointer-events-none"
               />
+
+              {/* Main Morphing Image Container */}
+              <motion.div
+                animate={{
+                  borderRadius: [
+                    "42% 58% 70% 30% / 45% 45% 55% 55%",
+                    "70% 30% 52% 48% / 60% 40% 60% 40%",
+                    "42% 58% 70% 30% / 45% 45% 55% 55%"
+                  ]
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="overflow-hidden border border-[#241C15]/10 shadow-[0_20px_50px_rgba(36,28,21,0.12)] relative z-10 w-full h-full bg-[#FCFAF5]"
+              >
+                <img
+                  src="/banner.png"
+                  alt="Heritage Handloom Craft Visual"
+                  className="w-full h-full object-cover scale-105 select-none"
+                />
+              </motion.div>
             </div>
           </motion.div>
         </div>

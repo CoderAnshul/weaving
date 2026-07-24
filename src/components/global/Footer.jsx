@@ -10,9 +10,9 @@ export default function Footer() {
   }
 
   const shopLinks = [
-    { label: 'Jari', href: '/products' },
-    { label: 'Dori', href: '/products' },
-    { label: 'Metallic Film', href: '/products' }
+    { label: 'Metallic Film', href: '/products' },
+    { label: 'Sequence Roll', href: '/products' },
+    { label: 'Jari', href: '/products' }
   ]
 
   const infoLinks = [
@@ -115,14 +115,24 @@ export default function Footer() {
                 <div className="p-2 rounded-lg bg-white border border-slate-200/80 text-slate-700 shrink-0 shadow-sm mt-0.5">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <div className="text-slate-600 text-[13px] leading-relaxed">
-                  <span className="font-bold text-slate-800">Contact Us:</span>
-                  <p className="mt-1 text-slate-600 hover:text-slate-900 transition-colors">
-                    SHIVSHAKTI POLYFILMS PVT. LTD.<br />
-                    R.S. No. 427, Block No. 412-B,<br />
-                    Vill - Pipodra, Tal - Mangrol,<br />
-                    Dist - Surat - 394110
-                  </p>
+                <div className="text-slate-600 text-[13px] leading-relaxed space-y-3">
+                  <div>
+                    <span className="font-bold text-slate-800 block mb-0.5">Shop Address:</span>
+                    <p className="text-slate-600 hover:text-slate-900 transition-colors">
+                      Shop no 1, Plot no 75, Street no 21,<br />
+                      Lambe Hanuman Rd, Ghansyamnagar,<br />
+                      Varachha, Surat, Gujarat - 395006
+                    </p>
+                  </div>
+                  <div>
+                    <span className="font-bold text-slate-800 block mb-0.5">Factory Address:</span>
+                    <p className="text-slate-600 hover:text-slate-900 transition-colors">
+                      SHIVSHAKTI POLYFILMS PVT. LTD.<br />
+                      R.S. No. 427, Block No. 412-B,<br />
+                      Vill - Pipodra, Tal - Mangrol,<br />
+                      Dist - Surat - 394110
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -131,13 +141,15 @@ export default function Footer() {
                 <div className="p-2 rounded-lg bg-white border border-slate-200/80 text-slate-700 shrink-0 shadow-sm mt-0.5">
                   <Phone className="w-4 h-4" />
                 </div>
-                <div className="text-slate-600 text-[13px] leading-relaxed">
-                  <span className="font-bold text-slate-800">Customer Care:</span>{' '}
-                  <a href="tel:+918866304000" className="hover:text-[#8a2b53] transition-colors font-semibold text-slate-700">+91 88663 04000</a>
-                  <p className="mt-1">
-                    <span className="font-bold text-slate-800">Whatsapp Support:</span>{' '}
-                    <a href="https://wa.me/918866304000" target="_blank" rel="noopener noreferrer" className="hover:text-[#8a2b53] transition-colors underline font-semibold text-slate-700">+91 88663 04000</a>
-                  </p>
+                <div className="text-slate-600 text-[13px] leading-relaxed space-y-1.5">
+                  <div>
+                    <span className="font-bold text-slate-800">Customer Care:</span><br />
+                    <a href="tel:+918866304000" className="hover:text-[#8a2b53] transition-colors font-semibold text-slate-700">+91 88663 04000</a> / <a href="tel:+919099054071" className="hover:text-[#8a2b53] transition-colors font-semibold text-slate-700">+91 90990 54071</a>
+                  </div>
+                  <div>
+                    <span className="font-bold text-slate-800">WhatsApp Support:</span><br />
+                    <a href="https://wa.me/918866304000" target="_blank" rel="noopener noreferrer" className="hover:text-[#8a2b53] transition-colors underline font-semibold text-slate-700">+91 88663 04000</a>, <a href="https://wa.me/919099054071" target="_blank" rel="noopener noreferrer" className="hover:text-[#8a2b53] transition-colors underline font-semibold text-slate-700">+91 90990 54071</a>
+                  </div>
                 </div>
               </div>
 
